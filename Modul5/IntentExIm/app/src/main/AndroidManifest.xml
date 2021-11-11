@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentExIm">
-        <activity android:name=".Practice5ReadDataActivity"></activity>
+        <activity android:name=".Practice5ForFragmentActivity"></activity>
+        <activity android:name=".Practice5ReadDataActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
