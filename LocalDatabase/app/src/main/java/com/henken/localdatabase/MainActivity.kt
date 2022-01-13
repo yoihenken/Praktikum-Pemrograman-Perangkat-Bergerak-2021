@@ -3,6 +3,7 @@ package com.henken.localdatabase
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -40,12 +41,14 @@ class MainActivity : AppCompatActivity() {
         adapter = QuoteAdapter(this)
         binding.rvQuotes.adapter = adapter
 
+        binding.fabAdd.setOnClickListener { startActivity(Intent(this, QuoteAddUpdateActivity::class.java)) }
+
         binding.fabAdd.setOnClickListener {
             val intent = Intent(this@MainActivity, QuoteAddUpdateActivity::class.java)
 //            startActivityForResult(intent, REQUEST_ADD)
             startActivity(intent)
+            Log.d("ActivityMain", "onCreate: Not Impl")
         }
-
 
         quoteHelper = QuoteHelper.getInstance(applicationContext)
         quoteHelper.open()
